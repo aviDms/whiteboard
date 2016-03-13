@@ -25,7 +25,7 @@ def login_required(f):
 
 @app.route('/')
 def home():
-    header = ['Departament', 'Title', 'Description', 'Edit entry', 'Run query']
+    header = ['Departament', 'Title', 'Description', '', '']
     stmt = "SELECT q.id, d.name, q.name, q.description " \
            "FROM query q JOIN departments d ON q.department_id=d.id " \
            "ORDER BY 2,3;"
