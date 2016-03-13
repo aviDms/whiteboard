@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Here is your whiteboard!</h1>
+<br>
+<p>Click <a href="/logout">here</a> to logout.</p>
+<br><br>
+
+<h2>Queries:</h2>
+<br><br>
+<table>
+
+    <tr>
+        {% for name in header %}
+        <th>{{ name }}</th>
+        {% endfor %}
+    </tr>
+    {% for row in rows %}
+    <tr>
+        {% for value in row[1:] %}
+        <td>{{ value }}</td>
+        {% endfor %}
+        <td><a href="/edit/{{row[0]}}">Edit</a></td>
+        <td><a href="/query/{{row[0]}}">Run</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

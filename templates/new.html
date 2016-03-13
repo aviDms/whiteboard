@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Add stuff to the whiteboard</h1>
+<br>
+<p>Click <a href="/logout">here</a> to logout.</p>
+<br><br>
+
+<h2>Enter a new query:</h2>
+<br><br>
+
+<form action="/new" method="GET">
+    <label for="name">Query Name</label><br>
+    <input type="text" name="name" id="name"><br>
+
+    <label for="department">Departament Name</label><br>
+    <select name="department" id="department">
+      <option value="bi">Business Intelligence</option>
+      <option value="finance">Finance</option>
+      <option value="marketing">Marketing</option>
+      <option value="ops">Operations</option>
+    </select><br>
+
+    <label for="description">Query Description</label><br>
+    <input type="text" name="description" id="description"><br>
+
+    <label for="query">SQL</label><br>
+    <textarea name="query" id="query" rows="10"></textarea><br>
+
+    <input type="submit" name="save" value="save">
+</form>
+{% endblock %}

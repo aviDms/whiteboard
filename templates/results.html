@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>{{ details['name'] }}</h2>
+
+<p>{{ details['department'] }}</p>
+<p>{{ details['description'] }}</p>
+<p>Result (first 5 rows):</p>
+
+<table>
+    <tr>
+        {% for name in header %}
+        <th>{{ name }}</th>
+        {% endfor %}
+    </tr>
+    {% for row in rows %}
+    <tr>
+        {% for value in row.values() %}
+        <td>{{ value }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+<br>
+
+<form action="/query/{{ id }}" method="get">
+<input type="submit" name="download" value="Download">
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Change stuff from the whiteboard</h1>
+<br>
+<p>Click <a href="/logout">here</a> to logout.</p>
+<br><br>
+
+<h2>{{ details['name'] }}</h2>
+<p>{{ details['department'] }}</p>
+<input type="submit" name="delete" value="Delete">
+<br><br>
+
+<form>
+    <label for="description">Query Description</label><br>
+    <textarea name="description" id="description" rows="5" cols="100">{{ details['description'] }}</textarea><br>
+
+    <label for="query">SQL</label><br>
+    <textarea name="query" id="query" rows="20" cols="100">{{ details['query'] }}</textarea><br>
+
+    <input type="submit" name="save" value="Save">
+</form>
+{% endblock %}
