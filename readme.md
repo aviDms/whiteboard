@@ -4,8 +4,6 @@
 Work in progress.
 
 
-![homepage]
-(Selection_006.png)
+![homepage](Selection_006.png)
 
-![results]
-(Selection_008.png)
+![results](Selection_008.png)
